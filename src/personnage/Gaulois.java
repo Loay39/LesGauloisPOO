@@ -1,14 +1,18 @@
 package personnage;
 
-public class LesGaulois {
+public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion=1;
-	public LesGaulois(String nom, int force) {
+	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
 	}
 	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -28,17 +32,15 @@ public class LesGaulois {
 		romain.recevoirCoup(force/3*effetPotion);
 	}
 	public void boirePotion(int forcePotion) {
-		if (5<=forcePotion && forcePotion<=10) {
 			effetPotion=forcePotion;
 			parler("« Merci Druide, je sens que ma force est " + forcePotion+ " fois décuplée. »");	
-		}
 	}
 	
 	public String toString() {
 		return "LesGaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
 	public static void main(String[] args) {
-		LesGaulois asterix = new LesGaulois("Asterix",8);
+		Gaulois asterix = new Gaulois("Asterix",8);
 		System.out.println(asterix.getNom());
 		System.out.println((asterix));
 		System.out.println(asterix.prendreParole());
