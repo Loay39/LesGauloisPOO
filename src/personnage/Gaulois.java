@@ -4,6 +4,7 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion=1;
+	private int nb_trophees=0;
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
@@ -24,16 +25,38 @@ public class Gaulois {
 	public void parler(String texte) {
 		System.out.println(prendreParole()+texte);
 	}
-	private String prendreParole() {
+	/*private String prendreParole() {
 		return "Le Gaulois " + nom + ": ";
-	}
-	public void frapper(Romain romain) {
+	}*/
+	 private String prendreParole() {
+         return "Le gaulois " + nom + " : ";
+}
+
+	/*public void frapper(Romain romain) {
 		System.out.println(nom+" renvoie un grand coup sur le Romain "+romain.getNom());
 		romain.recevoirCoup(force/3*effetPotion);
-	}
+	}*/
+	 
+	 public void frapper(Romain romain) {
+		 System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		 Equipement[] trophees = romain.recevoirCoup((force / 3) * effetPotion);
+		 for (int i = 0; trophees != null && i < trophees.length; i++, nb_trophees++) {
+               this.trophees[nb_trophees] = trophees[i];
+}
+		 return;
+		 }
+	 
 	public void boirePotion(int forcePotion) {
 			effetPotion=forcePotion;
 			parler("« Merci Druide, je sens que ma force est " + forcePotion+ " fois décuplée. »");	
+	}
+	public void faireUneDonnation (Musee musee) {
+		if (musee.getNbTrophee()>0) {
+			musee.donnerTrophees(new Gaulois (nom,force),trophees);
+		}
+		
+		
+		
 	}
 	
 	public String toString() {
