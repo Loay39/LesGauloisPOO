@@ -5,6 +5,7 @@ public class Gaulois {
 	private int force;
 	private int effetPotion=1;
 	private int nb_trophees=0;
+	private Equipement[] trophees;
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
@@ -43,21 +44,13 @@ public class Gaulois {
 		 for (int i = 0; trophees != null && i < trophees.length; i++, nb_trophees++) {
                this.trophees[nb_trophees] = trophees[i];
 }
-		 return;
 		 }
 	 
 	public void boirePotion(int forcePotion) {
 			effetPotion=forcePotion;
 			parler("« Merci Druide, je sens que ma force est " + forcePotion+ " fois décuplée. »");	
 	}
-	public void faireUneDonnation (Musee musee) {
-		if (musee.getNbTrophee()>0) {
-			musee.donnerTrophees(new Gaulois (nom,force),trophees);
-		}
-		
-		
-		
-	}
+
 	
 	public String toString() {
 		return "LesGaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
