@@ -1,23 +1,17 @@
 package personnage;
 
-public class Gaulois {
-	private String nom;
-	private int force;
+public class Gaulois extends Personnage {
 	private int effetPotion=1;
 	private int nb_trophees=0;
 	private Equipement[] trophees;
 	public Gaulois(String nom, int force) {
-		this.nom = nom;
-		this.force = force;
+			super(nom,force);
 	}
 	
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	public String getNom() {
-		return nom;
-	}
 
 	public int getForce() {
 		return force;
@@ -26,9 +20,7 @@ public class Gaulois {
 	public void parler(String texte) {
 		System.out.println(prendreParole()+texte);
 	}
-	/*private String prendreParole() {
-		return "Le Gaulois " + nom + ": ";
-	}*/
+
 	 private String prendreParole() {
          return "Le gaulois " + nom + " : ";
 }
@@ -53,7 +45,8 @@ public class Gaulois {
 
 	
 	public String toString() {
-		return "LesGaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+		String etatPersonnage= super.toString();
+		return "LesGaulois" + etatPersonnage.substring(0,etatPersonnage.length()-1) + "effetPotion"+effetPotion+"]";
 	}
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix",8);

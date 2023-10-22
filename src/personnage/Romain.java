@@ -1,19 +1,17 @@
 package personnage;
 
-public class Romain {
-	private String nom;
-	private int force;
+public class Romain extends Personnage{
 	private boolean vainqueur=false;
 	private Equipement[] equipements = new Equipement[2];
 	private int nbEquipement=0;
 	public Romain(String nom, int force) {
-		this.nom = nom;
-		this.force = force;
+		super(nom,force);
 	}
 	
 	public boolean isVainqueur() {
 		return vainqueur;
 	}
+
 
 	public void sEquiper(Equipement equipement) {
 		switch (nbEquipement) {
