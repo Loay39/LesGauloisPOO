@@ -34,7 +34,7 @@ public class Gaulois extends Personnage {
 		 System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
 		 Equipement[] trophees = romain.recevoirCoup((force / 3) * effetPotion);
 		 for (int i = 0; trophees != null && i < trophees.length; i++, nb_trophees++) {
-               this.trophees[nb_trophees] = trophees[i];
+			 this.trophees[i] = trophees[i] ;
 }
 		 }
 	 
