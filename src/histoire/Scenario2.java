@@ -3,6 +3,7 @@ package histoire;
 import personnage.Druide;
 import personnage.Equipement;
 import personnage.Gaulois;
+import personnage.Musee;
 import personnage.Romain;
 
 public class Scenario2 {
@@ -33,8 +34,8 @@ public class Scenario2 {
 		
 //		Partie a decommenter
 		
-//		Musee musee = new Musee();
-//		asterix.faireUneDonnation(musee);
+		Musee musee = new Musee();
+		asterix.faireUneDonnation(musee);
 
 	}
 

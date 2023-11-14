@@ -37,7 +37,14 @@ public class Gaulois extends Personnage {
 			 this.trophees[i] = trophees[i] ;
 }
 		 }
-	 
+	public void faireUneDonnation(Musee musee) {
+		parler("Je donne au musée tous mes trophees : ");
+		for (int i=0;i<nb_trophees;i++) {
+			System.out.println("-"+trophees[i]+"\n");
+			musee.donnerTrophees(this, trophees[i]);
+		}
+		
+	}
 	public void boirePotion(int forcePotion) {
 			effetPotion=forcePotion;
 			parler("« Merci Druide, je sens que ma force est " + forcePotion+ " fois décuplée. »");	

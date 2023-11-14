@@ -3,10 +3,8 @@ package personnage;
 public class Musee {
 	private Trophee[] trophees=new Trophee[200];
 	private int nbTrophee= 0;
-	public Musee(Trophee[] trophees, int nbTrophee) {
+	public Musee() {
 		super();
-		this.trophees = trophees;
-		this.nbTrophee = nbTrophee;
 	}
 	public void donnerTrophees(Gaulois gaulois, Equipement equipement) {
 		Trophee nouvelleTrophee = new Trophee(gaulois, equipement);
